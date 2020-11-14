@@ -2976,10 +2976,10 @@ function changeCanvasLayout(layout) {
 }
 
 function populateMetadata() {
-  document.getElementById("title").innerHTML = pcbdata.metadata.title;
-  document.getElementById("revision").innerHTML = "Rev: " + pcbdata.metadata.revision;
+  document.getElementById("title").innerHTML = "Badge - KMDigumarti";//pcbdata.metadata.title;
+  document.getElementById("revision").innerHTML = "Rev: 2020_v1";// + pcbdata.metadata.revision;
   document.getElementById("company").innerHTML = pcbdata.metadata.company;
-  document.getElementById("filedate").innerHTML = pcbdata.metadata.date;
+  document.getElementById("filedate").innerHTML = "";//pcbdata.metadata.date;
   if (pcbdata.metadata.title != "") {
     document.title = pcbdata.metadata.title + " BOM";
   }
