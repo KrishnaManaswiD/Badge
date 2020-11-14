@@ -65,3 +65,8 @@ I programmed the board using the second method. It is running the example code t
 The red LED at the top left of the board flashes once as soon as you turn on the badge.  
 This is followed by two cycles of the Neopixel running through the colours of the rainbow.  
 Finally, the LED on the badge glows to highlight the name.  
+
+## Mistakes in the design
+1. On the top silkscreen, the ON side of the power switch is indicated incorrectly. The switch is ON when it is towards the bottom end of the badge and OFF when it is towards the top end.
+2. The USB connector needs to be grounded. The pcb does not do it. A simple fix is to solder a 0V resistor between the USB casing and a nearby GND pin.
+3. The VCC pin on the SPI header is not connected to anything else. This means that during programming, power must be suplied to the board through the 3v3 pin.
