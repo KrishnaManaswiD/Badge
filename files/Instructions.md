@@ -2,14 +2,13 @@
 
 ## Assembly
 1. Solder all the components.
-2. The name tag is cut out of acrylic and glued to the front of the badge.
+2. The name tag is laser-cut out of acrylic. Download the file [here](https://github.com/KrishnaManaswiD/Badge/blob/main/files/nameTag.dxf). I engraved the name by hand, using a rotary tool with a ball attachment. I then glued it to the front of the badge.
 3. The battery holder is 3D printed and affixed to the back of the badge. The STL file is located [here](https://github.com/KrishnaManaswiD/Badge/blob/main/files/batteryHolder.stl). I printed it on an Anycubic Photon S.  
-4. The metallic piece of the magnet is glued to the battery holder.
+4. The metallic piece of the magnet is finally glued to the battery holder.
 
 ## Powering the badge
-The battery holder is designed to hold two CR2032 batteries in the circular portion or a small LiPo battery in the rectangular section beside the magnetic piece.  
-The badge has an onboard regulator that supplies 3.3V to the chips.  
-Connect the batteries using the JST header. Be sure to check the polarity.  
+The battery holder is designed to hold two CR2032 batteries (3V each) in the circular portion or a small 3.7V LiPo battery in the rectangular section.  
+The badge has an onboard regulator that supplies 3.3V to the chips. Connect the batteries using the JST header. **Be sure to check the polarity.**
 
 ## Programming
 The board is very similar in design to the [Adafruit Flora](https://www.adafruit.com/product/659). There are a few differences like extra I/O pins and LEDs but you can treat it in a similar manner. To set it up like an Adafruit Flora, you need to burn the correct bootloader. The advantage is that the Arduino IDE recognises the board as a Flora and you can program it through the USB port. The disadvantage is that the additional pin functionality is lost.  
@@ -35,16 +34,14 @@ You will need to connect the SPI headers as shown below.
 | GND     |  GND    |
 | 3V3     |  3V3    |
 
-If you are looking at the front of the badge, the SPI header is to the left of the ATMEGA32U4 chip. The pins are as follows.  
+If you are looking at the front of the badge, the SPI header is to the left of the ATMEGA32U4 chip. The pins are as follows. The square pad is the GND pin in my design.   
 |  RESET  |   SCK   |  MISO  |
 |---------|:-------:|-------:|
 | **GND** |**MOSI** |**VCC** |
 
-Note: You will also need to use a 10µF electrolytic capacitor between RESET and GND on the UNO. Connect this only after burning the ArduinoISP sketch.  
+Note: You will also need to use a 10µF electrolytic capacitor between RESET and GND on the UNO when using it as a programmer. Connect this only after burning the ArduinoISP sketch.  
 
-Additional note: The VCC pin on the badge pcb is not connected to anything else. To power the board during programming, connect the 3V3 pin on the UNO to the 3v3 pin on the badge (first hole on the bottom left). Be careful that you are using the 3V3 pin from the UNO and not the 5V pin. The badge only runs ar 3V3. You should also be careful that the connection is stable for the entire duration of the programming and does not dislodge as the badge is being programmed. You risk bricking the board.  
-
-You can also try providing power with a battery.  
+Additional note: The VCC pin on the badge pcb is not connected to anything else. To power the board during programming, connect the 3V3 pin on the UNO to the 3v3 pin on the badge (first hole on the bottom left). **Be careful that you are using the 3V3 pin from the UNO and not the 5V pin. The badge only runs at 3.3V. You should also be careful that the connection is stable for the entire duration of the programming and does not dislodge as the badge is being programmed.** Else, you risk bricking the board. You can also try providing power with a battery.  
 
 ### Option 1: Burning the Adafruit Flora bootloader to the badge
 1. First, make sure you have the relevant bootloader. Install the Adafruit boards to the Arduino IDE by following the isntructions [here](https://learn.adafruit.com/adafruit-arduino-ide-setup/arduino-1-dot-6-x-ide).
@@ -57,7 +54,7 @@ You can also try providing power with a battery.
 Your board should now be detected as an Adafruit Flora. You might have to install the relevant drivers on Windows. See [here](https://learn.adafruit.com/getting-started-with-flora/windows-setup). You dont need the UNO anymore. Use the badge as if you use a regular Arduino. A ton of Flora related tutorials can be found [here](https://learn.adafruit.com/getting-started-with-flora/flora-projects).
 
 ### Option 2: No bootloader. Use an UNO to upload a sketch to the badge each time
-1. In the Arduino IDE, open the sketch that you want to write to the badge. An example is [here](https://github.com/KrishnaManaswiD/Badge/blob/main/files/demo.ino).
+1. In the Arduino IDE, open the sketch that you want to write to the badge. A demo code is [here](https://github.com/KrishnaManaswiD/Badge/blob/main/files/demo.ino).
 2. Coonect the UNO to the badge as described in the section above. Double check the 3V3 cable. 
 3. Under Tools -> Port, choose the port that the UNO is connected to.
 4. Under Tools -> Programmer, choose Arduinoo as ISP 
@@ -67,7 +64,7 @@ If you disconnect the UNO, connect a battery and turn the badge ON, you should s
 You need to use the UNO, that has been set up as a programmer, each time you want to upload a new sketch.  
 
 ## Note to friends who received the badges as a gift
-I programmed the board using the second method. It is running the example code that I linked above.  
+I programmed the board using the second method. It is running the demo code that I linked above.  
 The red LED at the top left of the board flashes once as soon as you turn on the badge.  
 This is followed by two cycles of the Neopixel running through the colours of the rainbow.  
 Finally, the LED on the badge glows to highlight the name.  
