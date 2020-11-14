@@ -1,18 +1,30 @@
 # Instructions
 
+## Assembly
+1. Solder all the components.
+2. The name tag is cut out of acrylic and glued to the front of the badge.
+3. The battery holder is 3D printed and affixed to the back of the badge. The STL file is located [here](https://github.com/KrishnaManaswiD/Badge/blob/main/files/batteryHolder.stl). I printed it on an Anycubic Photon S.  
+4. The metallic piece of the magnet is glued to the battery holder.
+
+## Powering the badge
+The battery holder is designed to hold two CR2032 batteries in the circular portion or a small LiPo battery in the rectangular section beside the magnetic piece.  
+The badge has an onboard regulator that supplies 3.3V to the chips.  
+Connect the batteries using the JST header. Be sure to check the polarity.  
+
+## Programming
 The board is very similar in design to the [Adafruit Flora](https://www.adafruit.com/product/659). There are a few differences like extra I/O pins and LEDs but you can treat it in a similar manner. To set it up like an Adafruit Flora, you need to burn the correct bootloader. The advantage is that the Arduino IDE recognises the board as a Flora and you can program it through the USB port. The disadvantage is that the additional pin functionality is lost.  
 
 Alternatively, you can treat the board like a programmable chip and write custom code on it through the SPI header.  
 
 Follow the steps below to set it up in whichever way you want. Both methods require the use of a programmer. An Arduino UNO that is set up as an ISP will do fine.
 
-## Convert an Arduino UNO to a programmer
+### Convert an Arduino UNO to a programmer
 1. Connect a working Arduino UNO to your computer.  
 2. Using the Arduino IDE, burn the ArduinoISP sketch from the provided examples.  
 
 Your Arduino UNO is now a programmer. For more details, you can refer [here](https://www.arduino.cc/en/Tutorial/BuiltInExamples/ArduinoISP)
 
-## Connecting the Arduino UNO to the badge
+### Connecting the Arduino UNO to the badge
 You will need to connect the SPI headers as shown below.
 |   UNO   |  Badge  |
 |---------|:-------:|
@@ -34,7 +46,7 @@ Additional note: The VCC pin on the badge pcb is not connected to anything else.
 
 You can also try providing power with a battery.  
 
-## Option 1: Burning the Adafruit Flora bootloader to the badge
+### Option 1: Burning the Adafruit Flora bootloader to the badge
 1. First, make sure you have the relevant bootloader. Install the Adafruit boards to the Arduino IDE by following the isntructions [here](https://learn.adafruit.com/adafruit-arduino-ide-setup/arduino-1-dot-6-x-ide).
 2. Connect the UNO to the badge as described in the section above. Double check the 3V3 cable.
 3. Under Tools -> Board, choose Adafruit Flora.
@@ -44,8 +56,8 @@ You can also try providing power with a battery.
 
 Your board should now be detected as an Adafruit Flora. You might have to install the relevant drivers on Windows. See [here](https://learn.adafruit.com/getting-started-with-flora/windows-setup). You dont need the UNO anymore. Use the badge as if you use a regular Arduino. A ton of Flora related tutorials can be found [here](https://learn.adafruit.com/getting-started-with-flora/flora-projects).
 
-## Option 2: No bootloader. Use an UNO to upload a sketch to the badge each time
-1. In the Arduino IDE, open the sketch that you want to write to the badge. An example is [here](https://github.com/KrishnaManaswiD/Badge/blob/main/docs/demo.ino).
+### Option 2: No bootloader. Use an UNO to upload a sketch to the badge each time
+1. In the Arduino IDE, open the sketch that you want to write to the badge. An example is [here](https://github.com/KrishnaManaswiD/Badge/blob/main/files/demo.ino).
 2. Coonect the UNO to the badge as described in the section above. Double check the 3V3 cable. 
 3. Under Tools -> Port, choose the port that the UNO is connected to.
 4. Under Tools -> Programmer, choose Arduinoo as ISP 
@@ -53,12 +65,6 @@ Your board should now be detected as an Adafruit Flora. You might have to instal
 
 If you disconnect the UNO, connect a battery and turn the badge ON, you should see the sketch running.  
 You need to use the UNO, that has been set up as a programmer, each time you want to upload a new sketch.  
-
-## Powering the badge
-I designed a battery holder to affix to the back of the badge. The STL file is located here. I printed it on an Anycubic Photon S.  
-This holder is designed to hold two CR2032 batteries in the circular portion or a small LiPo battery in the rectangular section beside the magnetic piece.  
-The badge has an onboard regulator that supplies 3.3V to the chips.  
-Connect the batteries using the JST header.  
 
 ## Note to friends who received the badges as a gift
 I programmed the board using the second method. It is running the example code that I linked above.  
