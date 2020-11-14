@@ -54,10 +54,14 @@ Your board should now be detected as an Adafruit Flora. You might have to instal
 If you disconnect the UNO, connect a battery and turn the badge ON, you should see the sketch running.  
 You need to use the UNO, that has been set up as a programmer, each time you want to upload a new sketch.  
 
+## Powering the badge
+I designed a battery holder to affix to the back of the badge. The STL file is located here. I printed it on an Anycubic Photon S.  
+This holder is designed to hold two CR2032 batteries in the circular portion or a small LiPo battery in the rectangular section beside the magnetic piece.  
+The badge has an onboard regulator that supplies 3.3V to the chips.  
+Connect the batteries using the JST header.  
+
 ## Note to friends who received the badges as a gift
 I programmed the board using the second method. It is running the example code that I linked above.  
 The red LED at the top left of the board flashes once as soon as you turn on the badge.  
 This is followed by two cycles of the Neopixel running through the colours of the rainbow.  
 Finally, the LED on the badge glows to highlight the name.  
-
-
