@@ -7,6 +7,8 @@ Back: a pictorial representation of our theses and a battery holder with a magne
 
 ![The badge](https://github.com/KrishnaManaswiD/Badge/blob/main/images/frontAnimated.gif?raw=true)
 
+Check out the instructions on building and programming the badge [here](https://github.com/KrishnaManaswiD/Badge/blob/main/files/Instructions.md).  
+
 The gerber files can be downloaded from [here](https://github.com/KrishnaManaswiD/Badge/blob/main/files/Gerber_PCB_2020-01-05%2022_20_36.zip)  
 
 I used [JLCPCB](https://jlcpcb.com/) to get the boards manufactured. This was the first time that I tried panelising the boards and I am pleased with the resutls.
