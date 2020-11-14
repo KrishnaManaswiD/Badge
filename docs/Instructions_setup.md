@@ -45,7 +45,7 @@ You can also try providing power with a battery.
 Your board should now be detected as an Adafruit Flora. You might have to install the relevant drivers on Windows. See [here](https://learn.adafruit.com/getting-started-with-flora/windows-setup). You dont need the UNO anymore. Use the badge as if you use a regular Arduino. A ton of Flora related tutorials can be found [here](https://learn.adafruit.com/getting-started-with-flora/flora-projects).
 
 ## Option 2: No bootloader. Use an UNO to upload a sketch to the badge each time
-1. In the Arduino IDE, open the sketch that you want to write to the badge. An example is here.
+1. In the Arduino IDE, open the sketch that you want to write to the badge. An example is [here](https://github.com/KrishnaManaswiD/Badge/blob/main/docs/demo.ino).
 2. Coonect the UNO to the badge as described in the section above. Double check the 3V3 cable. 
 3. Under Tools -> Port, choose the port that the UNO is connected to.
 4. Under Tools -> Programmer, choose Arduinoo as ISP 
@@ -55,6 +55,9 @@ If you disconnect the UNO, connect a battery and turn the badge ON, you should s
 You need to use the UNO, that has been set up as a programmer, each time you want to upload a new sketch.  
 
 ## Note to friends who received the badges as a gift
-I programmed the board using the second method. It is running the example code that I linked above.
+I programmed the board using the second method. It is running the example code that I linked above.  
+The red LED at the top left of the board flashes once as soon as you turn on the badge.  
+This is followed by two cycles of the Neopixel running through the colours of the rainbow.  
+Finally, the LED on the badge glows to highlight the name.  
 
 
