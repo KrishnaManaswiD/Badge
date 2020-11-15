@@ -7,7 +7,7 @@
 4. The metallic piece of the [magnetetic clip](https://www.amazon.com/Magnetic-Name-Badge-Holder/s?k=Magnetic+Name+Badge+Holder) is finally glued to the battery holder.
 
 ## Powering the badge
-The battery holder is designed to hold two CR2032 batteries (3V each) in the circular portion or a small 3.7V LiPo battery in the rectangular section.
+The battery holder is designed to hold two CR2032 batteries (3V each) in the circular portion or a small 3.7V LiPo battery in the rectangular section below the metallic piece.
 The badge has an onboard regulator that supplies 3.3V to the chips. Connect the batteries using the JST header. **Be sure to check the polarity.**
 
 ![The back](https://github.com/KrishnaManaswiD/Badge/blob/main/files/labelledBack.png?raw=true)
@@ -74,6 +74,13 @@ This is followed by two cycles of the Neopixel running through the colours of th
 Finally, the LED on the badge glows to highlight the name.  
 
 ![The badge](https://github.com/KrishnaManaswiD/Badge/blob/main/files/frontAnimated.gif?raw=true)
+
+## Addressable LEDs and I/O
+1. The red LED in the top left of the badge is on pin 7.
+2. The LED above the name tag is on pin 13.
+3. The neopixel is on pin 8.
+4. I/O pins at the bottom are pins 6, 9, 10 and 12.
+
 
 ## Mistakes in the design
 1. On the top silkscreen, the ON side of the power switch is indicated incorrectly. The switch is ON when it is towards the bottom end of the badge and OFF when it is towards the top end.
