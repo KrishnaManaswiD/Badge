@@ -41,7 +41,7 @@ If you are looking at the front of the badge, the SPI header is to the left of t
 |---------|:-------:|-------:|
 | **GND** |**MOSI** |**VCC** |
 
-![The front](https://github.com/KrishnaManaswiD/Badge/blob/main/files/labelledFront.png?raw=true)
+![The front](https://github.com/KrishnaManaswiD/Badge/blob/main/files/wiringDiagram.png?raw=true)
 
 Note: You will also need to use a 10µF electrolytic capacitor between RESET and GND on the UNO when using it as a programmer. Connect this only after burning the ArduinoISP sketch.  
 
