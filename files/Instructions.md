@@ -4,7 +4,7 @@
 1. Solder all the components.
 2. The name tag is laser-cut out of acrylic. Download the file [here](https://github.com/KrishnaManaswiD/Badge/blob/main/files/nameTag.dxf). I engraved the name by hand, using a rotary tool with a ball attachment. I then glued it to the front of the badge.
 3. The battery holder is 3D printed and affixed to the back of the badge. The STL file is located [here](https://github.com/KrishnaManaswiD/Badge/blob/main/files/batteryHolder.stl). I printed it on an Anycubic Photon S.  
-4. The metallic piece of the magnet is finally glued to the battery holder.
+4. The metallic piece of the [magnetetic clip](https://www.amazon.com/Magnetic-Name-Badge-Holder/s?k=Magnetic+Name+Badge+Holder) is finally glued to the battery holder.
 
 ## Powering the badge
 The battery holder is designed to hold two CR2032 batteries (3V each) in the circular portion or a small 3.7V LiPo battery in the rectangular section.
