@@ -7,8 +7,10 @@
 4. The metallic piece of the magnet is finally glued to the battery holder.
 
 ## Powering the badge
-The battery holder is designed to hold two CR2032 batteries (3V each) in the circular portion or a small 3.7V LiPo battery in the rectangular section.  
+The battery holder is designed to hold two CR2032 batteries (3V each) in the circular portion or a small 3.7V LiPo battery in the rectangular section.
 The badge has an onboard regulator that supplies 3.3V to the chips. Connect the batteries using the JST header. **Be sure to check the polarity.**
+
+![The back](https://github.com/KrishnaManaswiD/Badge/blob/main/images/labelledBack.png?raw=true)
 
 ## Programming
 The board is very similar in design to the [Adafruit Flora](https://www.adafruit.com/product/659). There are a few differences like extra I/O pins and LEDs but you can treat it in a similar manner. To set it up like an Adafruit Flora, you need to burn the correct bootloader. The advantage is that the Arduino IDE recognises the board as a Flora and you can program it through the USB port. The disadvantage is that the additional pin functionality is lost.  
@@ -39,6 +41,8 @@ If you are looking at the front of the badge, the SPI header is to the left of t
 |---------|:-------:|-------:|
 | **GND** |**MOSI** |**VCC** |
 
+![The front](https://github.com/KrishnaManaswiD/Badge/blob/main/images/labelledFront.png?raw=true)
+
 Note: You will also need to use a 10µF electrolytic capacitor between RESET and GND on the UNO when using it as a programmer. Connect this only after burning the ArduinoISP sketch.  
 
 Additional note: The VCC pin on the badge pcb is not connected to anything else. To power the board during programming, connect the 3V3 pin on the UNO to the 3v3 pin on the badge (first hole on the bottom left). **Be careful that you are using the 3V3 pin from the UNO and not the 5V pin. The badge only runs at 3.3V. You should also be careful that the connection is stable for the entire duration of the programming and does not dislodge as the badge is being programmed.** Else, you risk bricking the board. You can also try providing power with a battery.  
@@ -68,6 +72,8 @@ I programmed the board using the second method. It is running the demo code that
 The red LED at the top left of the board flashes once as soon as you turn on the badge.  
 This is followed by two cycles of the Neopixel running through the colours of the rainbow.  
 Finally, the LED on the badge glows to highlight the name.  
+
+![The badge](https://github.com/KrishnaManaswiD/Badge/blob/main/images/frontAnimated.gif?raw=true)
 
 ## Mistakes in the design
 1. On the top silkscreen, the ON side of the power switch is indicated incorrectly. The switch is ON when it is towards the bottom end of the badge and OFF when it is towards the top end.
